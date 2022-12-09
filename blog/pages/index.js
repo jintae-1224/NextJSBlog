@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -11,19 +12,10 @@ export default function Home() {
       </Head>
 
       <main>
+        <Image src="/images/img.png" alt="capture" width={400} height={100} />
         <h1 className={styles.title}>
           Read this Post <Link href="/posts/first-post">첫번째 글</Link>
         </h1>
-        <h1 className={styles.title}>
-          Read this Post <a href="/posts/first-post">첫번째 글</a>
-        </h1>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
