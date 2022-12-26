@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }) {
           includeSeconds: true,
         })}
       </div>
-      <ErrorBoundary fallbackComponents={<div>민망..</div>}>
+      <ErrorBoundary>
         <Component {...pageProps} pathname={router.pathname} />
       </ErrorBoundary>
     </Layout>
