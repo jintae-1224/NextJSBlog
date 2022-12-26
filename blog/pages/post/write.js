@@ -2,6 +2,10 @@ import Link from 'next/link'
 import { useRef, useState } from 'react'
 import Layout from '../../components/Layout'
 
+export async function getServerSideProps() {
+  return {}
+}
+
 export default function Write() {
   const idRef = useRef(undefined)
   const titleRef = useRef(undefined)
