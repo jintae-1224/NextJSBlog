@@ -66,7 +66,7 @@ export function getAllPostIds() {
 
 export async function getPostData(id) {
   const fullMdPath = path.join(postsDirectory, `${id}.md`)
-  const mdExist = fs.existsSync()
+  const mdExist = fs.existsSync(fullMdPath)
 
   if (mdExist) {
     const fullPath = path.join(postsDirectory, `${id}.md`)
