@@ -7,10 +7,17 @@ import { useRouter } from 'next/router'
 // }
 
 export default function Write() {
-  const router = useRouter();
-  useEffect(()=>{
-    console.log(router.query);
-  },[router.query])
+  const router = useRouter()
+
+  useEffect(() => {
+    if (router.isReady) {
+      console.log(JSON.stringify(router))
+    }
+  }, [router])
+
+  useEffect(() => {
+    console.log(router.query)
+  }, [router.query])
   const idRef = useRef(undefined)
   const titleRef = useRef(undefined)
   const contentRef = useRef(undefined)
