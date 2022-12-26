@@ -6,6 +6,11 @@ import Layout from '../../components/Layout'
 import CodeBlock from '../../components/CodeBlock'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import utilStyles from '../../styles/utils.module.css'
+import dynamic from 'next/dynamic'
+
+const Button = dynamic(() => import("../../components/Button"),{
+  loading: () => <div>Loading...</div>
+})
 
 export async function getStaticPaths() {
   const paths = getAllPostIds()
@@ -16,7 +21,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, preview }) {
-  console.log(">>>>>",preview);
+  console.log('>>>>>', preview)
   const postData = await getPostData(params.id)
   return {
     props: {
@@ -25,11 +30,7 @@ export async function getStaticProps({ params, preview }) {
   }
 }
 
-const Button = ({ children }) => {
-  return (
-    <button className='bg-black dark:bg-white text-lg text-teal-200 dark:text-teal-700 rounded-lg px-5' onClick={() => alert(`thanks to ${children}`)}>{children}</button>
-  )
-}
+
 
 const components = { Button, CodeBlock }
 
