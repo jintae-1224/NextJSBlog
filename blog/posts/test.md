@@ -1,12 +1,6 @@
 ---
-title: 'Test Post'
-date: '2022-12-17'
+title: 'test'
+date: '2022-12-26'
 ---
 
-### Hello World
-
-#### nice to meet you
-
-```
-const hi = 'hello'
-```
+test
