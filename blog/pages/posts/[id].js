@@ -30,7 +30,7 @@ export async function getStaticProps({ params, preview }) {
 
 const components = { Button, CodeBlock }
 
-export default function Post({ postData }) {
+export default function Post({ postData, pathname }) {
   const router = useRouter()
 
   if (router.isFallback) {
@@ -39,6 +39,7 @@ export default function Post({ postData }) {
 
   return (
     <article>
+      <h2>pathname : {pathname}</h2>
       <h1 className={utilStyles.headingXl}>{postData.title}</h1>
       <div className={utilStyles.lightText}>
         <Date dateString={postData.date} />
