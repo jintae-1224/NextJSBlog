@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import Layout from '../../components/Layout'
 import { useRouter } from 'next/router'
 
 // export async function getServerSideProps() {
@@ -47,7 +46,7 @@ export default function Write() {
     }
   }
   return (
-    <Layout>
+    <>
       <h1>Write a Post</h1>
       <form onSubmit={handleSubmit}>
         <input type="text" name="id" placeholder="id" required ref={idRef} />
@@ -73,6 +72,6 @@ export default function Write() {
       {showLink && (
         <Link href={`/posts/${idRef.current.value}`}>Created Post</Link>
       )}
-    </Layout>
+    </>
   )
 }
