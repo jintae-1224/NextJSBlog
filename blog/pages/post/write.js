@@ -13,6 +13,7 @@ export default function Write() {
     if (router.isReady) {
       console.log(JSON.stringify(router))
     }
+    router.prefetch('posts/ssg-ssr')
   }, [router])
 
   useEffect(() => {
@@ -79,6 +80,21 @@ export default function Write() {
       {showLink && (
         <Link href={`/posts/${idRef.current.value}`}>Created Post</Link>
       )}
+      <br />
+      <br />
+      <button
+        onClick={
+          () => router.push('/posts/[id]', 'posts/ssg-ssr', { scroll: false })
+          // scroll : false => scroll 유지
+        }
+      >
+        router.push
+      </button>
+      <br />
+      <br />
+      <button onClick={() => router.replace('/posts/ssg-ssr')}>
+        router.replace
+      </button>
     </>
   )
 }
